@@ -7,7 +7,7 @@ import { IoSearchCircle } from "react-icons/io5";
 
 export default function Header() {
   return (
-    <header className="w-full primary-theme p-2 h-16 shadow-2xl">
+    <header className="w-full primary-theme p-2 h-16 shadow-2xl fixed top-0 z-10">
       <div className="max-w-7xl h-full mx-auto relative">
         <Image
           className="absolute -top-15 left-1/2 -translate-x-1/2"

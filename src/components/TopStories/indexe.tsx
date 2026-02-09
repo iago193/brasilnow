@@ -28,11 +28,11 @@ export default function TopStories({ news }: FeedNewsProps) {
   if (!item) return null;
 
   return (
-    <section className="max-w-5xl mx-auto">
+    <section className="max-w-5xl mx-auto mt-40">
       <div className="relative shadow-xl rounded-md overflow-hidden h-44">
         <Image
           alt={item.title || "Notícia"}
-          src={item.image || "/no-image.png"}
+          src={item.image || "/default-image.jpg"}
           fill
           className="object-cover"
         />

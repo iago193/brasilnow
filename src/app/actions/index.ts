@@ -14,6 +14,7 @@ export async function getNews() {
       description: item.contentSnippet,
       date: item.pubDate,
       image,
+      categories: item.categories,
     };
   });
 }
