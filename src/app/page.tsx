@@ -1,7 +1,7 @@
-import Header from "@/components/header";
-import TopStories from "@/components/TopStories/indexe";
+import Header from "@/components/ui/header";
+import TopStories from "@/components/ui/topStories/indexe";
 import { getNews } from "@/app/actions";
-import NewsList from "@/components/NewsList";
+import NewsList from "@/components/ui/newsList";
 
 export default async function Home() {
   const news = await getNews();

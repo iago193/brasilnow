@@ -3,5 +3,6 @@ export type News = {
   link?: string;
   description?: string;
   date?: string;
+  guid?: string;
   image?: string | null;
 };

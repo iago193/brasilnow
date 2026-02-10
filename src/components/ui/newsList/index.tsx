@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { News } from "@/types";
 import Image from "next/image";
 import { formatDate } from "@/utils/formatDate";
+import Link from "next/link";
 
 type NewList = {
   news: News[];
@@ -41,12 +42,13 @@ export default function NewsList({ news }: NewList) {
               <span className="absolute right-10 bottom-4">
                 {formatDate(feed.date)}
               </span>
-              <button
+              <Link
+                href={`/news/${feed.title}`}
                 className="absolute bottom-4 left-80 mx-3 px-4 bg-blue-400 py-2 rounded-lg text-white font-bold
               hover:bg-blue-500 transition duration-300 hover:cursor-pointer shadow-md"
               >
                 Ver noticia completa.
-              </button>
+              </Link>
             </div>
           </div>
         ))}
