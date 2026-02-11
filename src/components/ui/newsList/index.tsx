@@ -5,6 +5,7 @@ import { News } from "@/types";
 import Image from "next/image";
 import { formatDate } from "@/utils/formatDate";
 import Link from "next/link";
+import { handleFormatLink } from "@/utils/handleFormatLink";
 
 type NewList = {
   news: News[];
@@ -43,7 +44,7 @@ export default function NewsList({ news }: NewList) {
                 {formatDate(feed.date)}
               </span>
               <Link
-                href={`/news/${feed.title}`}
+                href={`/news/${handleFormatLink(feed.title || "")}`}
                 className="absolute bottom-4 left-80 mx-3 px-4 bg-blue-400 py-2 rounded-lg text-white font-bold
               hover:bg-blue-500 transition duration-300 hover:cursor-pointer shadow-md"
               >

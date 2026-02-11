@@ -1,4 +1,3 @@
-import Header from "@/components/ui/header";
 import TopStories from "@/components/ui/topStories/indexe";
 import { getNews } from "@/app/actions";
 import NewsList from "@/components/ui/newsList";
@@ -7,7 +6,6 @@ export default async function Home() {
   const news = await getNews();
   return (
     <div>
-      <Header />
       <main className="w-full">
         <div className="max-w-7xl mx-auto mt-10">
           <TopStories news={news} />
