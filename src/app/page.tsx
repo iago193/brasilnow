@@ -1,9 +1,15 @@
 import TopStories from "@/components/ui/topStories/indexe";
-import { getNews } from "@/app/actions";
+import { getNews } from "@/services/newsService";
 import NewsList from "@/components/ui/newsList";
+import WeatherCard from "@/components/ui/WeatherCard";
+import { getForecast } from "@/services/Forecast";
 
 export default async function Home() {
   const news = await getNews();
+  const forecast = await getForecast();
+
+  if (!forecast) throw new Error("Erro na requisição forecast");
+
   return (
     <div>
       <main className="w-full">
@@ -14,7 +20,7 @@ export default async function Home() {
               <NewsList news={news} />
             </div>
             <div className="w-full hidden lg:inline-block p-4 bg-white rounded-lg shadow-sm mt-4 max-h-80">
-              Teste2
+              <WeatherCard forecast={forecast} />
             </div>
           </div>
         </div>

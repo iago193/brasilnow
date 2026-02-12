@@ -1,4 +1,4 @@
-import { getNews } from "@/app/actions";
+import { getNews } from "@/services/newsService";
 import { handleFormatLink } from "@/utils/handleFormatLink";
 import Image from "next/image";
 

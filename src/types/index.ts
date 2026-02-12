@@ -6,3 +6,12 @@ export type News = {
   guid?: string;
   image?: string | null;
 };
+
+export type Forecast = {
+  city: string;
+  date: string;
+  maxTemp: string;
+  minTemp: string;
+  avgTemp: string;
+  description: string;
+};
