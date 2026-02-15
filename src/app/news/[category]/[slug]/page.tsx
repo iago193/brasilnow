@@ -11,7 +11,7 @@ type Props = {
 export default async function News({ params }: Props) {
   const { slug } = await params;
 
-  const posts = await getNews();
+  const posts = await getNews('');
 
   const post = posts.find(
     (item) => handleFormatLink(item.title || "") === slug,

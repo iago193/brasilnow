@@ -1,8 +1,8 @@
 import Parser from "rss-parser";
 
-export async function getNews() {
+export async function getNews(category: string) {
   const parser = new Parser();
-  const feed = await parser.parseURL("https://g1.globo.com/rss/g1/");
+  const feed = await parser.parseURL(`https://g1.globo.com/rss/g1/${category}`);
 
   return feed.items.map((item) => {
     // pega a primeira imagem do content

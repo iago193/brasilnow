@@ -5,7 +5,7 @@ import WeatherCard from "@/components/ui/WeatherCard";
 import { getForecast } from "@/services/Forecast";
 
 export default async function Home() {
-  const news = await getNews();
+  const news = await getNews('');
   const forecast = await getForecast();
 
   if (!forecast) throw new Error("Erro na requisição forecast");

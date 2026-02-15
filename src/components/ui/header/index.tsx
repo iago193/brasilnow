@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { logo } from "@/assets";
+import NavBar from "@/components/navBar";
 
-import { RxHamburgerMenu } from "react-icons/rx";
 import { FaUserCircle } from "react-icons/fa";
 import { IoSearchCircle } from "react-icons/io5";
 
@@ -18,10 +18,7 @@ export default function Header() {
         />
 
         <div className="flex justify-between items-center mt-2">
-          <div className="flex justify-center items-center gap-2 text-white font-bold">
-            <RxHamburgerMenu size={25} />{" "}
-            <span className="hidden lg:inline">Menu</span>
-          </div>
+          <NavBar />
           <div className="flex gap-4 relative">
             <span className="absolute top-[3px] left-1">
               <IoSearchCircle size={25} />
