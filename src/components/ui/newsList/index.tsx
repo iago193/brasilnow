@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { News } from "@/types";
 import Image from "next/image";
 import { formatDate } from "@/utils/formatDate";
 import Link from "next/link";
 import { handleFormatLink } from "@/utils/handleFormatLink";
+import { useParams } from "next/navigation";
+import { useState } from "react";
 
 type NewList = {
   news: News[];
@@ -21,6 +22,8 @@ export default function NewsList({ news }: NewList) {
   const currentNews = news.slice(firstIndex, lastIndex);
 
   const totalPages = Math.ceil(news.length / itemsPerPage);
+  const params = useParams();
+  const category = params.category as string;
 
   return (
     <section>
@@ -44,11 +47,11 @@ export default function NewsList({ news }: NewList) {
                 {formatDate(feed.date)}
               </span>
               <Link
-                href={`/news/${handleFormatLink(feed.title || "")}`}
+                href={`/news/${category}/${handleFormatLink(feed.title || "")}`}
                 className="absolute bottom-4 left-80 mx-3 px-4 bg-blue-400 py-2 rounded-lg text-white font-bold
               hover:bg-blue-500 transition duration-300 hover:cursor-pointer shadow-md"
               >
-                Ver noticia completa.
+                Notícia completa.
               </Link>
             </div>
           </div>

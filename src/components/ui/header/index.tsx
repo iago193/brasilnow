@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { logo } from "@/assets";
-import NavBar from "@/components/navBar";
+import NavBar from "@/components/ui/navBar";
 
 import { FaUserCircle } from "react-icons/fa";
 import { IoSearchCircle } from "react-icons/io5";

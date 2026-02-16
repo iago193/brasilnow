@@ -1,17 +1,20 @@
+export const revalidate = 60;
+
 import { getNews } from "@/services/newsService";
 import { handleFormatLink } from "@/utils/handleFormatLink";
 import Image from "next/image";
 
 type Props = {
-  params: Promise<{
+  params: {
+    category: string;
     slug: string;
-  }>;
+  };
 };
 
 export default async function News({ params }: Props) {
-  const { slug } = await params;
+  const { slug, category } = await params;
 
-  const posts = await getNews('');
+  const posts = await getNews(category);
 
   const post = posts.find(
     (item) => handleFormatLink(item.title || "") === slug,

@@ -1,3 +1,5 @@
+export const revalidate = 60 * 30;
+
 import TopStories from "@/components/ui/topStories/indexe";
 import { getNews } from "@/services/newsService";
 import NewsList from "@/components/ui/newsList";
